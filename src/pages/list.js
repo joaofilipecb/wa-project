@@ -8,8 +8,8 @@ const List = () => {
   const { id } = useParams();
   const [listData, setListData] = useState();
   const [loading, setLoading] = useState(false);
-  const getQuestions = (e) => {
-    fetchQuestions().then((response) => setListData(response));
+  const getQuestions = () => {
+    fetchQuestions(id).then((response) => setListData(response));
     setLoading(true);
   };
   return (

@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const fetchQuestions = async (e) => {
+const fetchQuestions = async (id) => {
   try {
     let res = await axios({
-      url: "https://opentdb.com/api.php?amount=10",
+      url: `https://opentdb.com/api.php?amount=${id}`,
       method: "get",
     });
     return res.data;
