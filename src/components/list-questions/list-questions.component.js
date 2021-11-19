@@ -5,12 +5,12 @@ import {
   ListItemButton,
   ListItemIcon,
   Collapse,
-  Button,
   Box,
   Typography,
 } from "@material-ui/core";
 import { ListTitleStyle } from "./list-questions.styles";
 import { OptionQuestions } from "../option-questions/option-questions.component";
+import { ButtonStep } from "../button-step";
 export const ListQuestions = ({ data }) => {
   const [sumQuestions, setSumQuestions] = useState([]);
   const [sumCorrectValues, setSumCorrectValues] = useState({
@@ -82,17 +82,7 @@ export const ListQuestions = ({ data }) => {
             </Typography>
           )}
         </Box>
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Button variant="contained" color="primary" onClick={defineQuestions}>
-            Verificar quantidade
-          </Button>
-        </Box>
+        <ButtonStep event={()=> defineQuestions()}></ButtonStep>
       </form>
     </List>
   );
